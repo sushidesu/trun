@@ -1,6 +1,8 @@
 #!/usr/bin/env node
+import { spawnSync } from "child_process"
+
 function main() {
-  console.log("hello!")
+  spawnSync(`echo "hello!"`, { shell: true, stdio: "inherit" })
 }
 
 main()
