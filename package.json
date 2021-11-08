@@ -6,7 +6,8 @@
   "scripts": {
     "build": "esbuild src/main.ts --target=node12 --format=cjs --outdir=dist",
     "start": "node dist/main.js",
-    "type": "tsc --noEmit"
+    "type": "tsc --noEmit",
+    "prepublish": "yarn build"
   },
   "bin": {
     "trun": "dist/main.js"
