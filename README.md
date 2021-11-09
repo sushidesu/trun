@@ -7,45 +7,50 @@ npm run with template string.
 ```sh
 yarn add -D @sushidesu/trun
 # OR
-npm install --dev @sushidesu/trun
+npm install --save-dev @sushidesu/trun
 ```
 
 ## Usage
 
-`trun "command to run with {}" arg1 arg2...`
+`trun [command] [arg1] [arg2]...`
 
-pass the command to run with `{}`. and 置き換えたい文字
+| prop | description |
+| --- | --- |
+| `[command]` | command to run. If you include `{}`, it will be replaced by `args`. |
+| `[args]` | string to replace `{}` with. |
 
-trun 実行する command replace `{}` with `args`
+TRUN replaces `{}` with `args` and executes command.
 
 ### Example
 
 ```sh
-❯ yarn start "echo {}" hello!
+❯ yarn start "echo {} and {}" hello world!
 yarn run v1.22.15
-$ node dist/main.js 'echo {}' hello!
-[trun] echo hello!
-hello!
-✨  Done in 0.42s.
+$ /home/.../node_modules/.bin/trun 'echo {} and {}' hello world!
+[trun] echo hello and world!
+hello and world!
+Done in 0.12s.
 ```
 
 ## Recommended Usage
 
 You can add this to `scripts` in package.json.
 
+### Example
+
 
 ```json
-  ...
+{
   "scripts": {
     "testit": "trun \"jest \"--testPathPattern={}\"",
   }
+}
 ```
 
-Then, 少ないタイプ数で柔軟にnpm scriptを実行できます。
+Then, you can flexibly execute npm scripts with a small number of types.
 
 ```sh
-yarn testit $someFile
-
-# run:
-# jest --testPathPattern=$someFile
+$ yarn testit $someFile
+# then execute ->
+$ yarn jest --testPathPattern=$someFile
 ```
