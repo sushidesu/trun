@@ -1,6 +1,6 @@
 {
   "name": "@sushidesu/trun",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "npm run with template string",
   "main": "index.js",
   "scripts": {
