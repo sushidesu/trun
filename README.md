@@ -42,7 +42,7 @@ You can add this to `scripts` in package.json.
 ```json
 {
   "scripts": {
-    "testit": "trun \"jest \"--testPathPattern={}\"",
+    "testit": "trun jest \"--testPathPattern={}\"",
   }
 }
 ```
@@ -50,7 +50,7 @@ You can add this to `scripts` in package.json.
 Then, you can flexibly execute npm scripts with a small number of types.
 
 ```sh
-$ yarn testit $someFile
-# then execute ->
-$ yarn jest --testPathPattern=$someFile
+$ yarn testit some-file
+# then execute --->
+$ yarn jest --testPathPattern=some-file
 ```
