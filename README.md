@@ -24,7 +24,7 @@ TRUN replaces `{}` with `args` and executes command.
 ### Example
 
 ```sh
-❯ yarn start "echo {} and {}" hello world!
+❯ yarn trun "echo {} and {}" hello world!
 yarn run v1.22.15
 $ /home/.../node_modules/.bin/trun 'echo {} and {}' hello world!
 [trun] echo hello and world!
